@@ -16,3 +16,5 @@ const solution = new_id => {
   }
   return new_id;
 };
+
+//문제 링크 => https://programmers.co.kr/learn/courses/30/lessons/72410

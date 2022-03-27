@@ -37,3 +37,5 @@ const report = [
 const k = 2;
 
 solution(id_list, report, k);
+
+//문제 링크 => https://programmers.co.kr/learn/courses/30/lessons/92334
