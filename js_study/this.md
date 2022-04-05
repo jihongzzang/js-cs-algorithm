@@ -223,7 +223,7 @@ document.getElementById('a').addEventListener(
 
 - `call` : 호출 주체인 함수를 즉시 실행하도록 하는 명령
 - `apply` : `call` 메서드와 기능적으로 동일하나 두번째 인자가 배열
-- `bind` : 념겨 받은 `this` 와 인수들을 바탕으로 새로운 함수를 반환하기만 하는 메서드
+- `bind` : 넘겨 받은 `this` 와 인수들을 바탕으로 새로운 함수를 반환하기만 하는 메서드
 
 ```js
 function a(x, y, z) {
