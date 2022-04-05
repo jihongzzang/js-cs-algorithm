@@ -2,3 +2,4 @@
 
 - [DataType](js_study/dataType.md)
 - [ExecutionContext](js_study/executionContext.md)
+- [FuncDeclare vs FuncExpressing](js_study/declareFuncExpressionFunc.md)
