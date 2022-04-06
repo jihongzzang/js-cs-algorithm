@@ -5,4 +5,4 @@
 - [FuncDeclare vs FuncExpressing](js_study/declareFuncExpressionFunc.md)
 - [This](js_study/this.md)
 - [callback](js_study/callback.md)
-- [closure]()
+- [closure](js_study/closure.md)
