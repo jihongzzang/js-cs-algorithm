@@ -1,6 +1,7 @@
 ### **FuncDeclare & FuncExpression**
 
 - 모두 함수를 새롭게 정의 할때 쓰이는 방식
+- ["함수 선언 함수 표현"](execution/declareExpress.js)
 
 ### **FuncDeclare**
 
