@@ -2,7 +2,7 @@
 
 - 영어사전에는 닫힘 | 폐쇄 | 완결성
 - `내부함수`와 `LexicalEnv`의 조합
-- [closuer 관련 코드](closure/closure.js)
+- [closure 관련 코드](closure/closure.js)
 
 ### **그래서 closure가 뭐야?**
 
