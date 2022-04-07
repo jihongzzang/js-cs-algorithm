@@ -128,6 +128,6 @@ delete Object.prototype.toString[
 
 - 원래의 경우
 
-<img src="../public/image/prototypeChain2.png"/>
+<img src="../public/image/prototypeChain2.png" width="540px"/>
 
 - 모든 프로토타입 체이닝의 종점은 Object.prototype이다.
