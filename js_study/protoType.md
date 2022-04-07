@@ -126,8 +126,5 @@ delete Object.prototype.toString[
 //toString is not a function
 ```
 
-- 원래의 경우
-
-<img src="../public/image/prototypeChain2.png" width="540px"/>
-
+- [원래의 경우](../public/image/protoTypeChain2.png)
 - 모든 프로토타입 체이닝의 종점은 Object.prototype이다.
