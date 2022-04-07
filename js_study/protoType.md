@@ -130,4 +130,4 @@ delete Object.prototype.toString[
 
 <img src="../public/image/prototypeChain2.png"/>
 
-모든 프로토타입 체이닝의 종점은 Object.prototype이다.
+- 모든 프로토타입 체이닝의 종점은 Object.prototype이다.
