@@ -9,7 +9,7 @@
 - 어떤 함수에서 A에서 함수 B를 선언했고 그때의 `함수 B`와 `A의 LexicalEnv`의 조합
 
 - 함수를 선언할때 만들어지는 유효범위가 사라진 후에도 호출할 수 있는 함수
-- 이미 생명 주기가 끝난 외부 함수의 변수를 참조하는 함수dd
+- 이미 생명 주기가 끝난 외부 함수의 변수를 참조하는 함수
 - 자신이 생성될 때의 스코프에서 알 수 있었던 변수들 중 언젠가 자신이 실행될때 사용할 변수들만을 기억하여 유지시키는 함수
 
 ### **closure의 특별한 현상**
@@ -165,7 +165,7 @@ outer
 
 ### **Closure 의 핵심**
 
-- `컨텍스트 A`에서 선언한 `변수 a`를 `참초`하는 `내부함수 B`를 `A`의 `외부로 전달`할 경우, `A`가 종료된 이후에도 `a`가 `사라지지 않는` 현상
+- `컨텍스트 A`에서 선언한 `변수 a`를 `참조`하는 `내부함수 B`를 `A`의 `외부로 전달`할 경우, `A`가 종료된 이후에도 `a`가 `사라지지 않는` 현상
 
 - 지역변수가 함수 종료 후에도 사라지지 않는 지역변수를 만들 수 있다.
 
@@ -257,3 +257,52 @@ outer2();
 ### **부분 적용 함수**
 
 - n개의 인자를 받는 함수에 미리 m개의 인자만 넘겨 기억 시켰다가, 나중에 (n-m)개의 인자를 넘기면 비로소 원래 함수의 실행 결과를 얻을 수 있게 끔 하는 함수. this를 바인딩 하는 점을 제외하면 bind메서드의 실행 결과가 바로 부분 적용함수.
+
+- 부분적용 함수를 사용하기에 적합한 예 `디바운스`
+- `디바운스`는 `짧은 시간` 동안 `동일한 이벤트`가 많이 발생할 경우 이를 전부 처리하지 않고 `처음` 또는 `마지막`에 발생한 이벤트에 대해 `한번만 처리`, 프론트엔드 성능 최적화에 도움을 주는 기능
+
+### **커링 함수**
+
+- 여러개의 인자를 받는 함수를 하나의 인자만 받는 함수
+- 커링은 한 번에 하나의 인자만 전달하는것이 원칙!
+- 중간 과정상의 함수를 실행한 결과는 그 다음 인자를 받기위해 대기만 할뿐, 마지막인자가 전달되기 전까지는 원본 함수가 실행되지 않는다.
+- 지연실행에서 유용하게 쓰임. 지연 실행이란 원하는 시점까지 지연시켰다가 실행
+
+- 부분적용 함수는 여러개의 인자를 전달할 수 있고, 실행 결과를 재 실행할 때 원본 함수가 무조건 실행!
+
+```js
+var curry = function (func) {
+  return function (a) {
+    return function (b) {
+      return func(a, b);
+    };
+  };
+};
+
+var getMaxWith10 = curry(Math.max)(10);
+getMaxWith(8); //10
+getMaxWith(25); //25
+
+//ES6 화살표 함수로 커리 함수 구현
+
+var curry = func => a => b => func(a, b);
+```
+
+```js
+var getInformation = baseUrl => path => id => fetch(`${baseUrl}${path}/${id}`);
+
+var imageUrl = 'http://imageAddress.com';
+var productUrl = 'http://productAddress.com';
+
+var getImage = getInformation(imageUrl);
+var getEmoticon = getImage('emoticon');
+var getIcon = getImage('icon');
+var getProduct = getInformation(productUrl);
+var getFruit = getProduct('fruit');
+var getVegitable = getProduct('vegitable');
+
+var emoticon1 = getEmoticon(100);
+var emoticon2 = getEmoticon(200);
+var fruit1 = getFruit(300);
+var fruit2 = getFruit(400);
+```

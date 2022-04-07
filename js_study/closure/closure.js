@@ -214,3 +214,75 @@ var add = function () {
 
 var addPartial = add.bind(null, 1, 2, 3, 4, 5);
 addPartial(4, 5, 6, 7, 8); //이때 값이 출력됨
+
+//this에 관여하지 않는 별도의 부분 적용 함수
+var partial = function () {
+  var originalPartialArgs = arguments;
+  var func = originalPartialArgs[0];
+  if (typeof func !== 'function') {
+    throw new Error('첫 번째 인자가 함수가 아닙니다.');
+  }
+  return function () {
+    var partialArgs = Array.prototype.slice.call(originalPartialArgs, 1);
+    var restArgs = Array.prototype.slice.call(arguments);
+    return func.apply(this, partialArgs.concat(restArgs));
+  };
+};
+
+var add = function () {
+  var result = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+  return result;
+};
+
+//인자들을 원하는 위치에 넣어놓고 나중에는 빈 자리에 인자를 채워넣어 실행 해보자
+
+var addPartial = partial(add, 1, 2, 3, 4, 5);
+addPartial(6, 7, 8, 9, 10);
+
+var dog = {
+  name: '강아지',
+  greet: partial(function (prefix, suffix) {
+    return prefix + this.name + suffix;
+  }, '왈왈, '),
+};
+
+dog.greet('입니다.');
+
+Object.defineProperty(window, '_', {
+  value: 'EMPTY_SPACE',
+  writable: false,
+  configurable: false,
+  enumerable: false,
+});
+
+var partial2 = function () {
+  var originalPartialArgs = arguments;
+  var func = originalPartialArgs[0];
+  if (typeof func !== 'function') {
+    throw new Error('첫 번째 인자가 함수가 아닙니다.');
+  }
+  return function () {
+    var partialArgs = Array.prototype.slice.call(originalPartialArgs, 1);
+    var restArgs = Array.prototype.slice.call(arguments);
+    for (var i = 0; i < partialArgs.length; i++) {
+      if (partialArgs[i] === _) {
+        partialArgs[i] = restArgs.shift();
+      }
+    }
+    return func.apply(this, partialArgs.concat(restArgs));
+  };
+};
+
+var add = function () {
+  var result = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+  return result;
+};
+
+var addPartial = partial2(add, 1, 2, _, 4, 5, _, _, 8, 9);
+addPartial(3, 6, 7, 10);
