@@ -6,3 +6,4 @@
 - [This](js_study/this.md)
 - [Callback](js_study/callback.md)
 - [Closure](js_study/closure.md)
+- [ProtoType](js_study/protoType.md)
