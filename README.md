@@ -13,3 +13,4 @@
 - [Callback](js_study/callback.md)
 - [Closure](js_study/closure.md)
 - [ProtoType](js_study/protoType.md)
+- [Promise](js_study/promise.md)

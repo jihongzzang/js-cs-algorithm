@@ -96,3 +96,34 @@ arr.forEach(obj.logValues);
 arr.forEach(obj.logValues.bind(obj));
 arr.forEach(obj.logValues, obj);
 ```
+
+### **first class citizen**
+
+```js
+val = 1;
+val = if(horse){
+  "sheap"
+};
+```
+
+- 조건문의 경우 `second class citizen`
+
+```js
+val = function (ship) {
+  return 'hores';
+};
+```
+
+- 함수의 경우 `first class citizen`
+- 자바의 경우는 이런게 되지 않음
+
+```js
+function fn() {
+  val = function (ship) {
+    return 'hores';
+  };
+  return val;
+}
+```
+
+- 함수가 다른함수의 리턴값이 될 수 있다면 그 언어는 함수를 `1급 시민` 으로 대우
