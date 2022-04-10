@@ -15,3 +15,4 @@
 - [ProtoType](js_study/protoType.md)
 - [Class](js_study/class.md)
 - [Promise](js_study/promise.md)
+- [Async Await](js_study/asyncawait.md)
