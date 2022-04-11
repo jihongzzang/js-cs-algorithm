@@ -3,6 +3,7 @@
 - [Bundle | Transpiler](/cs/bundleTranspiler.md)
 - [CSR vs SSR | SPA vs MPA | PWA](/cs/csrSsrSpaMpaPwa.md)
 - [REST API | Request Methods](/cs/RestApi.md)
+- [Ajax](/cs/Ajax.md)
 
 ### JS 관련 공부항목
 
@@ -15,4 +16,6 @@
 - [ProtoType](js_study/protoType.md)
 - [Class](js_study/class.md)
 - [Promise](js_study/promise.md)
-- [Async Await](js_study/asyncawait.md)
+- [Async && Await](js_study/asyncawait.md)
+- [Generator | Async && Await](js_study/generatorAsyncAwait.md)
+- [Error Handle](js_study/errorHandle.md)
