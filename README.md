@@ -4,6 +4,7 @@
 - [CSR vs SSR | SPA vs MPA | PWA](/cs/csrSsrSpaMpaPwa.md)
 - [REST API | Request Methods](/cs/RestApi.md)
 - [Ajax](/cs/Ajax.md)
+- [EventLoop](/cs/EventLoop.md)
 
 ### JS 관련 공부항목
 
@@ -19,3 +20,4 @@
 - [Async && Await](js_study/asyncawait.md)
 - [Generator | Async && Await](js_study/generatorAsyncAwait.md)
 - [Error Handle](js_study/errorHandle.md)
+- [forEachMap](js_study/forEachMap.md)
