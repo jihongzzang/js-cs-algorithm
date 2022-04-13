@@ -5,6 +5,7 @@
 - [REST API | Request Methods](/cs/RestApi.md)
 - [Ajax](/cs/Ajax.md)
 - [EventLoop](/cs/EventLoop.md)
+- [CORS](/cs/Cors.md)
 
 ### JS 관련 공부항목
 
