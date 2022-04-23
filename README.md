@@ -22,5 +22,7 @@
 - [Async && Await](js_study/asyncawait.md)
 - [Generator | Async && Await](js_study/generatorAsyncAwait.md)
 - [Error Handle](js_study/errorHandle.md)
+- [ErrorCode](js_study/errorCode.md)
 - [forEachMap](js_study/forEachMap.md)
 - [Map && Set](js_study/MapSet.md)
+- [Setter && Getter](js_study/setterGetter.md)
