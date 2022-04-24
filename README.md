@@ -13,6 +13,8 @@
 ### JS 관련 공부항목
 
 - [DataType](js_study/dataType.md)
+- [Scope](js_study/Scope.md)
+- [Hoisting | var | let | const](js_study/Hoisting.md)
 - [ExecutionContext](js_study/executionContext.md)
 - [FuncDeclare vs FuncExpressing](js_study/declareFuncExpressionFunc.md)
 - [This](js_study/this.md)
