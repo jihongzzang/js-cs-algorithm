@@ -7,7 +7,7 @@
 - [EventLoop](/cs/EventLoop.md)
 - [CORS](/cs/Cors.md)
 - [Process | Thread | Concurrency | Parallelism](/cs/ConPar.md)
-- [Array | LinkedList ](cs/LinkedListArray)
+- [Array | LinkedList ](cs/LinkedListArray.md)
 - [Tree](cs/Tree.md)
 
 ### JS 관련 공부항목
