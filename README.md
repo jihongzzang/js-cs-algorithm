@@ -2,13 +2,16 @@
 
 - [Bundle | Transpiler](/cs/bundleTranspiler.md)
 - [CSR vs SSR | SPA vs MPA | PWA](/cs/csrSsrSpaMpaPwa.md)
-- [REST API | Request Methods](/cs/RestApi.md)
 - [Ajax](/cs/Ajax.md)
+- [REST API | Request Methods](/cs/RestApi.md)
+- [Rest Vs GraphQL](cs/RestVsGraphQl.md)
 - [EventLoop](/cs/EventLoop.md)
 - [CORS](/cs/Cors.md)
 - [Process | Thread | Concurrency | Parallelism](/cs/ConPar.md)
 - [Array | LinkedList ](cs/LinkedListArray.md)
 - [Tree](cs/Tree.md)
+- [DesignPattern](cs/desingpattern.md)
+- [CookieSessionJWT](cs/CookieSessionJwt.md)
 
 ### JS 관련 공부항목
 
