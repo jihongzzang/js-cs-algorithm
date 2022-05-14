@@ -35,3 +35,5 @@
 - [Setter && Getter](js_study/setterGetter.md)
 
 ### JS With Redux
+
+- [ReduxExample](redux_vanilla/store.js)
