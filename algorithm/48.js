@@ -44,3 +44,31 @@ function solution(bridge_length, weight, truck_weights) {
 
   return time;
 }
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/42583 (다리를 지나는 트럭)
+
+function solution(bridge_length, weight, truck_weights) {
+  let elapsedTime = 0;
+
+  let queue = Array(bridge_length).fill(0);
+
+  let currentWeightOnBridge = 0;
+
+  while (truck_weights.length > 0) {
+    currentWeightOnBridge -= queue.shift();
+
+    if (currentWeightOnBridge + truck_weights[0] <= weight) {
+      let truck = truck_weights.shift();
+      queue.push(truck);
+      currentWeightOnBridge += truck;
+    } else {
+      queue.push(0);
+    }
+
+    elapsedTime++;
+  }
+
+  elapsedTime += bridge_length;
+
+  return elapsedTime;
+}
