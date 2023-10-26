@@ -63,3 +63,40 @@ function solution(s) {
 
   return answer;
 }
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/42577 (전화번호 목록)
+
+function solution(arr) {
+  var answer = true;
+
+  arr.sort();
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i + 1]?.startsWith(arr[i])) {
+      return false;
+    }
+  }
+
+  return answer;
+}
+
+function solution(phone_book) {
+  const hashMap = {};
+  for (let x of phone_book) {
+    hashMap[x] = 1;
+  }
+
+  for (let x of phone_book) {
+    let temp = '';
+    const phoneNumberWithoutSpace = x.replace(/\s/g, '');
+
+    for (let number of phoneNumberWithoutSpace) {
+      temp += number;
+
+      if (hashMap[temp] && temp != phoneNumberWithoutSpace) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
