@@ -55,3 +55,47 @@ function solution(n) {
     .split('')
     .filter(ele => ele === '1').length;
 }
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/12973 (짝지어 제거하기)
+
+function solution(s) {
+  var answer = 0;
+
+  let stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (stack.length && stack[stack.length - 1] === s[i]) {
+      stack.pop();
+    } else {
+      stack.push(s[i]);
+    }
+  }
+
+  if (!stack.length) {
+    answer = 1;
+  }
+
+  return answer;
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/42747 (H-Index)
+
+function solution(citations) {
+  var answer = 0;
+
+  citations.sort((a, b) => b - a);
+
+  let arr = [];
+
+  for (let i = 0; i < citations.length; i++) {
+    arr.push(citations[i]);
+
+    if (citations[i] < arr.length) {
+      break;
+    }
+
+    answer++;
+  }
+
+  return answer;
+}
