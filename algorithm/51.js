@@ -110,3 +110,24 @@ function solution(numbers) {
 
   return answer[0] === '0' ? '0' : answer;
 }
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/42578 (의상)
+
+function solution(clothes) {
+  let count = 1;
+  let hashMap = new Map();
+
+  for (let i = 0; i < clothes.length; i++) {
+    if (hashMap.has(clothes[i][1])) {
+      hashMap.set(clothes[i][1], hashMap.get(clothes[i][1]) + 1);
+    } else {
+      hashMap.set(clothes[i][1], 2);
+    }
+  }
+
+  for (let x of hashMap) {
+    count = count * x[1];
+  }
+
+  return count - 1;
+}
