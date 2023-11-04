@@ -26,3 +26,20 @@ function solution(k, tangerine) {
 
   return answer;
 }
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/131701 (연속 부분 수열 합의 개수)
+
+function solution(arr) {
+  let set = new Set();
+  let extendElement = [...arr, ...arr];
+
+  arr.forEach((_, idx) => {
+    for (let i = 0; i < arr.length; i++) {
+      const slice = extendElement.slice(i, i + 1 + idx);
+      const sum = slice.reduce((acc, val) => acc + val, 0);
+      set.add(sum);
+    }
+  });
+
+  return set.size;
+}
