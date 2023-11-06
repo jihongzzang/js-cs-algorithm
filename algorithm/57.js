@@ -58,3 +58,37 @@ function solution(n, left, right) {
 
   return answer;
 }
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/131127 (할인 행사)
+
+function solution(want, number, discount) {
+  var answer = 0;
+  console.log(discount.length);
+
+  for (let i = 0; i < discount.length; i++) {
+    let hashmap = new Map();
+
+    want.forEach((ele, idx) => {
+      hashmap.set(ele, number[idx]);
+    });
+
+    for (let j = i; j < Math.min(i + 10, discount.length); j++) {
+      if (hashmap.has(discount[j]) && hashmap.get(discount[j]) !== 0) {
+        hashmap.set(discount[j], hashmap.get(discount[j]) - 1);
+      }
+    }
+
+    let isTarget = true;
+
+    for (let [_, value] of hashmap) {
+      if (value) {
+        isTarget = false;
+      }
+    }
+
+    if (isTarget) {
+      answer++;
+    }
+  }
+  return answer;
+}
