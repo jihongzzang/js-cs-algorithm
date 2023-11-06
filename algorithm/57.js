@@ -92,3 +92,30 @@ function solution(want, number, discount) {
   }
   return answer;
 }
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/64065 (튜플)
+
+function solution(s) {
+  var answer = [];
+
+  arr = s.split(',');
+
+  const map = new Map();
+
+  const regExp = /{|}/g;
+
+  arr.forEach(ele => {
+    const num = Number(ele.replaceAll(regExp, ''));
+    if (map.has(num)) {
+      map.set(num, map.get(num) + 1);
+    } else {
+      map.set(num, 1);
+    }
+  });
+
+  const sortedArr = [...map].sort((a, b) => b[1] - a[1]);
+
+  sortedArr.forEach(ele => answer.push(ele[0]));
+
+  return answer;
+}
