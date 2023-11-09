@@ -78,7 +78,6 @@ function solution(fees, records) {
     acc[car] = acc[car] || { acc: 0, outTime: 23 * 60 + 59 };
 
     if (action === 'IN') {
-      console.log('hi');
       acc[car].acc += acc[car].outTime - (hour * 60 + minute);
     } else {
       acc[car].outTime = hour * 60 + minute;
@@ -104,7 +103,7 @@ function solution(fees, records) {
   return records;
 }
 
-// https://school.programmers.co.kr/learn/courses/30/lessons/43165 (깊이/너비 우선 탐색)
+// https://school.programmers.co.kr/learn/courses/30/lessons/43165 (타겟 넘버)
 
 function solution(numbers, target) {
   let answer = 0;
