@@ -42,3 +42,28 @@ function solution(files) {
 
   return answer;
 }
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/132265 (롤케이크 자르기)
+
+function solution(topping) {
+  var answer = 0;
+
+  const [bro1Set, bro1Arr, bro2Set, bro2Arr] = [new Set(), [], new Set(), []];
+
+  topping.forEach((ele, i) => {
+    const reverse = topping.at(-i);
+    bro1Set.add(ele);
+    if (i !== 0) {
+      bro2Set.add(reverse);
+    }
+    bro1Arr.push(bro1Set.size);
+    bro2Arr.push(bro2Set.size);
+  });
+
+  answer = bro1Arr.reduce(
+    (acc, curr, i) => (curr === bro2Arr.at(-i - 1) ? acc + 1 : acc),
+    0
+  );
+
+  return answer;
+}
