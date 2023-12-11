@@ -50,7 +50,7 @@ function solution(maps) {
   return answer.sort((a, b) => a - b);
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/86971 (전력망을 둘로 나누기)
+// https://school.programmers.co.kr/learn/courses/30/lessons/86971 (전력망을 둘로 나누기)
 
 function solution(n, wires) {
   var answer = 100;
